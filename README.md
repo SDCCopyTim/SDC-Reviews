@@ -1,19 +1,19 @@
-# Project Name
+# Reviews Module
 
-> Project description
+> Reviews module for a product page on a camp spot rental website. Created as part of our Front-End Capstone project at Hack Reactor.
 
 ## Related Projects
 
   - https://github.com/teamName/repo
   - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/Go-Tim/overview-2
+  - https://github.com/Go-Tim/tim-suggestions
 
 ## Table of Contents
 
 1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
+2. [Requirements](#requirements)
+3. [Development](#development)
 
 ## Usage
 
