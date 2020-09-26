@@ -7,7 +7,9 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "nodemon --watch src server/index.js"
+    "start": "nodemon --watch src server/index.js",
+    "seed": "node database/seedReviews.js",
+    "build": "webpack --watch"
   },
   "dependencies": {
     "axios": "^0.20.0",
@@ -21,6 +23,7 @@
     "mysql": "^2.18.1"
   },
   "devDependencies": {
+    "@webpack-cli/init": "^0.3.0",
     "eslint": "^7.9.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
@@ -28,7 +31,9 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.21.1",
     "eslint-plugin-react-hooks": "^4.1.2",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
   },
   "version": "1.0.0",
   "main": "server/index.js",
