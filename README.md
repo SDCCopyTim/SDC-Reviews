@@ -37,3 +37,6 @@ npm install -g webpack
 npm install
 ```
 
+### Database
+1. Set up a mongodb database called 'timcamp'
+2. Run the seed file from the command line while in the root directory, run $ ```node database/seedReviews.js```
