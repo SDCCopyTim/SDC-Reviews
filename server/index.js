@@ -6,7 +6,6 @@ const app = express();
 
 const dbHelpers = require('../database/dbHelpers.js');
 
-
 // Static files
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
