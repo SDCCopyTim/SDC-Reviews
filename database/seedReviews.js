@@ -3,6 +3,8 @@ const db = require('./index.js');
 const faker = require('faker');
 faker.locale = 'en_US';
 
+// This is just a seed file for the reviews database. Only run once to populate reviews.
+
 let reviewsGenerator = function() {
   reviewsArr = [];
   for (let i = 1; i <= 100; i++) {
