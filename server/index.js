@@ -27,6 +27,16 @@ app.get('/api/:campId', (req, res) => {
     }
   });
 });
+// Post a review to the database for particular campground by campId.
+app.post('/api/:campId', (req, res) => {
+  dbHelpers.postReviewByCampId(req.params.campId, req.body, (err, results) => {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(200).send('Thanks for your review!');
+    }
+  });
+});
 
 // Set port and get confirmation
 let port = 3004;
