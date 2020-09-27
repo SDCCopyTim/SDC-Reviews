@@ -1,12 +1,13 @@
 import React from 'react';
 import axios from 'axios';
+import ReviewsList from './ReviewsList.jsx';
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       campReviews: [],
-      campId: 52
+      campId: 53
     };
     this.getReviewsForCamp = this.getReviewsForCamp.bind(this);
   }
@@ -27,7 +28,18 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div><h1>Hello from React</h1></div>
+      <div className="reviews-main-wrapper">
+        <div className="reviews-main-column-2-3">
+          <div className="reviews-container">
+            <div className="reviews-count-sort">
+              <div className="reviews-count"><span>{this.state.campReviews.length} Written Reviews</span></div>
+              <div className="reviews-sort"><span>Recent / Best</span></div>
+            </div>
+            <ReviewsList campReviews={this.state.campReviews} />
+          </div>
+        </div>
+        <div className="reviews-right-column-1-3"></div>
+      </div>
     );
   }
 }
