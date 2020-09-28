@@ -8,10 +8,11 @@ faker.locale = 'en_US';
 let reviewsGenerator = function() {
   reviewsArr = [];
   for (let i = 1; i <= 100; i++) {
-    let howManyReviews = faker.random.number({min: 1, max: 15});
+    let howManyReviews = faker.random.number({min: 1, max: 17});
     for (let j = 0; j <= howManyReviews; j++) {
       let reviewerName = faker.name.firstName() + ' ' + faker.random.alpha().toUpperCase() + '.';
-      let reviewText = faker.lorem.paragraphs(2, '\n');
+      let reviewLength = faker.random.number({min: 1, max: 3});
+      let reviewText = faker.lorem.paragraphs(reviewLength, '\n');
       let reviewerAvatar = faker.image.avatar();
       let helpfulReview = faker.random.number({min: 0, max: 14});
       let reviewDate = faker.date.between('2017-01-01', '2020-09-25');
