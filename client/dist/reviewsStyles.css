@@ -118,14 +118,16 @@ table {
   border-radius: 50%;
 }
 
-
+.reviews-review-body {
+  margin-left: 20px;
+  border-bottom: .65px solid #e7e7e7;
+}
 
 .reviews-header {
   flex-grow: 1;
   height: 25px;
   margin-top: 25px;
   margin-bottom: 15px;
-  margin-left: 20px;
   display: flex;
   align-content: center;
 }
@@ -140,6 +142,15 @@ table {
   height: 25px;
   border-radius: 25px;
   background-color: #40d9ac;
+  color: white;
+  font-size: 12px;
+}
+
+.reviews-thumbs-up-icon {
+  position: relative;
+  left: 6px;
+  top: 5px
+
 }
 
 .reviews-username, .reviews-date {
@@ -158,7 +169,52 @@ table {
 }
 
 .reviews-review-text {
-  margin-left: 20px;
+
   font-size: 17.6px;
   line-height: 25px;
+}
+
+.reviews-review-text p {
+  margin-bottom: 30px;
+}
+
+.reviews-lower-btns {
+  background-color: darksalmon;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.reviews-helpful-btn {
+  background-color: #40d9ac;
+  font-weight: 500;
+  height: 45px;
+  width: 105px;
+  padding: 12px 2px;
+  font-size: 12px;
+  line-height: 19.88px;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.reviews-helpful-inner-text {
+  display: flex;
+  align-items: center;
+}
+
+.reviews-helpful-thumb-icon {
+  font-size: 17px;
+  margin-right: 6px;
+}
+
+.reviews-report-btn {
+  color: #757575;
+  font-size: 12px;
+  text-align: center;
+  height: 33px;
+  padding: 5px 0 5px 10px;
 }

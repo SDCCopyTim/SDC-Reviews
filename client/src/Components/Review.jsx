@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaThumbsUp, FaRegThumbsUp, FaRegFlag } from 'react-icons/fa';
 
 // Available props: review (review object)
 const Review = (props) => {
@@ -11,12 +12,24 @@ const Review = (props) => {
         <div className="reviews-review-body">
           <div className="reviews-header">
             <div className="reviews-thumb-username">
-              <div className="reviews-thumbs-up"></div>
+              <div className="reviews-thumbs-up">
+                <div className="reviews-thumbs-up-icon"><FaThumbsUp /></div>
+              </div>
               <div className="reviews-username">{props.review.username} recommends this listing.</div>
             </div>
             <div className="reviews-date">{props.review.date}</div>
           </div>
-          <div className="reviews-review-text">{props.review.bodyText}</div>
+          <div className="reviews-review-text"><p>{props.review.bodyText}</p></div>
+          <div className="reviews-lower-btns">
+            <div className="reviews-helpful-btn">
+              <div className="reviews-helpful-inner-text">
+                <div className="reviews-helpful-thumb-icon"><FaRegThumbsUp /></div>
+                <div>Helpful</div>
+              </div>
+              <div>{props.review.helpful}</div>
+            </div>
+            <div className="reviews-report-btn"><FaRegFlag /> Report</div>
+          </div>
         </div>
       </div>
     </div>
