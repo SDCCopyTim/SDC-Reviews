@@ -15,7 +15,7 @@ const Review = (props) => {
               <div className="reviews-thumbs-up">
                 <div className="reviews-thumbs-up-icon"><FaThumbsUp /></div>
               </div>
-              <div className="reviews-username">{props.review.username} recommends this listing.</div>
+              <div className="reviews-username"><a href="#">{props.review.username}</a> recommends this listing.</div>
             </div>
             <div className="reviews-date">{props.review.date}</div>
           </div>
@@ -28,7 +28,10 @@ const Review = (props) => {
               </div>
               <div>{props.review.helpful}</div>
             </div>
-            <div className="reviews-report-btn"><FaRegFlag /> Report</div>
+            <div className="reviews-report-btn">
+              <FaRegFlag />
+              <div className="reviews-report-btn-text">Report</div>
+            </div>
           </div>
         </div>
       </div>

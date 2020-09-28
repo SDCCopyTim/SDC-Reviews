@@ -160,27 +160,35 @@ table {
 
 .reviews-username {
   margin-left: 10px;
+  font-size: 16px;
+}
+
+.reviews-username a {
+  color: #333;
+  text-decoration: none;
   font-size: 18px;
 }
 
+.reviews-username a:hover {
+  text-decoration: underline;
+}
+
 .reviews-date {
-  font-size: 16px;
+  font-size: 15px;
   color: #757575;
 }
 
 .reviews-review-text {
-
-  font-size: 17.6px;
+  font-size: 16.5px;
   line-height: 25px;
 }
 
 .reviews-review-text p {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .reviews-lower-btns {
-  background-color: darksalmon;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -217,4 +225,10 @@ table {
   text-align: center;
   height: 33px;
   padding: 5px 0 5px 10px;
+  display: flex;
+  align-items: center;
+}
+
+.reviews-report-btn-text {
+  margin-left: 5px;
 }
