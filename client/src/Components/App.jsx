@@ -73,7 +73,7 @@ export default class App extends React.Component {
     // Conditional rendering for top 5 reviews or all:
     let reviewsList;
     let seeAllDisplay;
-    if (this.state.top5) {
+    if (this.state.campReviews.length > 5 && this.state.top5) {
       reviewsList = this.state.campReviews.slice(0, 5);
       seeAllDisplay = { display: 'flex' };
     } else {
