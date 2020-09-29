@@ -120,6 +120,22 @@ table {
   color: #757575;
 }
 
+.reviews-see-all-container {
+  margin: auto;
+  justify-content: center;
+}
+
+.reviews-see-all {
+  border-bottom: 1px solid #dddddd;
+  margin: 20px 0 20px 60px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.reviews-see-all:hover {
+  border-bottom: 1px solid #757575;
+}
+
 .reviews-list {
   display: flex wrap;
   justify-content: flex-start;
