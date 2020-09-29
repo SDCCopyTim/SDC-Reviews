@@ -4,9 +4,20 @@ const faker = require('faker');
 
 module.exports = {
 
-  // Get all reviews for particular campground by campId
+  // Get all reviews for particular campground by campId, sorted by helpfulness and then date
   getCampgroundReviews: (campId, callback) => {
-    db.Review.find({campgroundId: campId}, (err, results) => {
+    db.Review.find({campgroundId: campId}).sort({helpful: 'desc', date: 'desc'}).exec((err, results) => {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null, results);
+      }
+    });
+  },
+
+  // Get all reviews for particular campground by campId, but sort only by date
+  getCampgroundReviewsByDate: (campId, callback) => {
+    db.Review.find({campgroundId: campId}).sort({date: 'desc'}).exec((err, results) => {
       if (err) {
         callback(err);
       } else {

@@ -16,10 +16,21 @@ app.use(bodyparser.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use(cors());
 
-// Get all reviews for particular campground by campId.
+// Get all reviews for particular campground by campId sorted by helpfulness and then date.
 // Returns an array of reviews
-app.get('/api/:campId', (req, res) => {
+app.get('/api/helpful/:campId', (req, res) => {
   dbHelpers.getCampgroundReviews(req.params.campId, (err, reviews) => {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(200).json(reviews);
+    }
+  });
+});
+// Get all reviews for particular campground by campId sorted by date only.
+// Returns an array of reviews
+app.get('/api/date/:campId', (req, res) => {
+  dbHelpers.getCampgroundReviewsByDate(req.params.campId, (err, reviews) => {
     if (err) {
       res.status(400).send(err);
     } else {
