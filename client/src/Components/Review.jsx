@@ -7,15 +7,7 @@ export default class Review extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      rollover: false
     };
-    this.handleButtonRollover = this.handleButtonRollover.bind(this);
-  }
-
-  handleButtonRollover() {
-    this.setState({
-      rollover: true
-    });
   }
 
   render() {
@@ -25,7 +17,7 @@ export default class Review extends React.Component {
 
     return (
       <div>
-        <div className="reviews-review">
+        <div className="reviews-review" >
           <div className="reviews-avatar">
             <img src={this.props.review.profilePhoto} alt="User photo" />
           </div>
