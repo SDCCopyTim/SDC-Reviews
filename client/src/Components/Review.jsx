@@ -17,7 +17,7 @@ export default class Review extends React.Component {
     this.handleMouseLeave = this.handleMouseLeave.bind(this);
     this.reportBtnClick = this. reportBtnClick.bind(this);
   }
-        
+
   updateHelpfulCount() {
     axios.put('/api/helpful', {
       reviewId: this.props.review._id,
@@ -30,6 +30,7 @@ export default class Review extends React.Component {
         });
       })
       .catch((err) => console.error(err));
+  }
 
   handleMouseEnter() {
     this.setState({
@@ -46,7 +47,7 @@ export default class Review extends React.Component {
   reportBtnClick() {
     window.alert('Good lookin out! We\'ll check into this review.');
   }
-          
+
   render() {
 
     // Create array of paragraphs from the review bodyText so I can map them to individual p tags:
