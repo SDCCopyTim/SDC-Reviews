@@ -258,6 +258,7 @@ table {
   display: flex;
   align-items: center;
   cursor: pointer;
+  transition-duration: 250ms;
 }
 
 .reviews-report-btn:hover {

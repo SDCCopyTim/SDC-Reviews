@@ -8,12 +8,16 @@ export default class Review extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      reportBtn: 0,
       helpful: this.props.review.helpful,
       increment: 1
     };
     this.updateHelpfulCount = this.updateHelpfulCount.bind(this);
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.handleMouseLeave = this.handleMouseLeave.bind(this);
+    this.reportBtnClick = this. reportBtnClick.bind(this);
   }
-
+        
   updateHelpfulCount() {
     axios.put('/api/helpful', {
       reviewId: this.props.review._id,
@@ -26,16 +30,36 @@ export default class Review extends React.Component {
         });
       })
       .catch((err) => console.error(err));
+
+  handleMouseEnter() {
+    this.setState({
+      reportBtn: 100
+    });
   }
 
+  handleMouseLeave() {
+    this.setState({
+      reportBtn: 0
+    });
+  }
+
+  reportBtnClick() {
+    window.alert('Good lookin out! We\'ll check into this review.');
+  }
+          
   render() {
 
     // Create array of paragraphs from the review bodyText so I can map them to individual p tags:
     let bodyTextParagraphs = this.props.review.bodyText.split('\n');
 
+    // Report button opacity conditional:
+    const reportBtnStyle = {
+      opacity: this.state.reportBtn,
+    };
+
     return (
       <div>
-        <div className="reviews-review" >
+        <div className="reviews-review" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
           <div className="reviews-avatar">
             <img src={this.props.review.profilePhoto} alt="User photo" />
           </div>
@@ -60,7 +84,7 @@ export default class Review extends React.Component {
                 </div>
                 <div>{this.state.helpful}</div>
               </div>
-              <div className="reviews-report-btn">
+              <div className="reviews-report-btn" style={reportBtnStyle} onClick={this.reportBtnClick}>
                 <FaRegFlag />
                 <div className="reviews-report-btn-text">Report</div>
               </div>
