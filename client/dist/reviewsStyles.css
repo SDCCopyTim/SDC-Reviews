@@ -160,13 +160,14 @@ table {
 
 .reviews-username {
   margin-left: 10px;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .reviews-username a {
   color: #333;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16.5px;
+  font-weight: 500;
 }
 
 .reviews-username a:hover {
@@ -174,13 +175,13 @@ table {
 }
 
 .reviews-date {
-  font-size: 15px;
-  font-weight: 300;
+  font-size: 14px;
+  font-weight: 400;
   color: #7f7f7f;
 }
 
 .reviews-review-text {
-  font-size: 16.5px;
+  font-size: 16px;
   line-height: 25px;
   white-space: pre-wrap;
 }
@@ -222,8 +223,8 @@ table {
 }
 
 .reviews-report-btn {
-  color: #7f7f7f;
-  font-size: 10px;
+  color: #808080;
+  font-size: 11px;
   font-weight: 400;
   text-align: center;
   height: 33px;
