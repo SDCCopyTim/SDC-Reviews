@@ -3,13 +3,12 @@ import { FaThumbsUp, FaRegThumbsUp, FaRegFlag } from 'react-icons/fa';
 import Moment from 'react-moment';
 import axios from 'axios';
 
-// Available props: review (review object)
+// Available props: review (review object), getCampReviews (function)
 export default class Review extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       reportBtn: 0,
-      helpful: this.props.review.helpful,
       increment: 1
     };
     this.updateHelpfulCount = this.updateHelpfulCount.bind(this);
@@ -25,9 +24,9 @@ export default class Review extends React.Component {
     })
       .then((response) => {
         this.setState({
-          helpful: this.state.helpful + this.state.increment,
           increment: this.state.increment * -1
         });
+        this.props.getCampReviews();
       })
       .catch((err) => console.error(err));
   }
@@ -83,7 +82,7 @@ export default class Review extends React.Component {
                   <div className="reviews-helpful-thumb-icon"><FaRegThumbsUp /></div>
                   <div>Helpful</div>
                 </div>
-                <div>{this.state.helpful}</div>
+                <div>{this.props.review.helpful}</div>
               </div>
               <div className="reviews-report-btn" style={reportBtnStyle} onClick={this.reportBtnClick}>
                 <FaRegFlag />

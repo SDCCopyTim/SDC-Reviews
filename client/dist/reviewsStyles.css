@@ -91,14 +91,15 @@ table {
 
 .reviews-count {
   flex: 1;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .reviews-sort {
   flex: 1;
   display: flex;
   justify-content: flex-end;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .reviews-sort-recent, .reviews-sort-best {
@@ -108,10 +109,15 @@ table {
   cursor: pointer;
 }
 
+.reviews-sort-recent:hover, .reviews-sort-best:hover {
+  border-bottom: 1px solid #333;
+
+}
+
 .reviews-sort-recent-active, .reviews-sort-best-active {
   color: #333;
   font-weight: 700;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #333;
   cursor: pointer;
 }
 

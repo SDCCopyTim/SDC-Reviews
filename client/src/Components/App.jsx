@@ -16,6 +16,7 @@ export default class App extends React.Component {
     this.changeToSortByDate = this.changeToSortByDate.bind(this);
     this.changeToSortByHelpfulness = this.changeToSortByHelpfulness.bind(this);
     this.loadAllReviews = this.loadAllReviews.bind(this);
+    this.getCampReviews = this.getCampReviews.bind(this);
   }
 
   componentDidMount() {
@@ -60,6 +61,14 @@ export default class App extends React.Component {
     });
   }
 
+  getCampReviews() {
+    if (this.state.sortByDate) {
+      this.getReviewsForCampSortByDate();
+    } else {
+      this.getReviewsForCampSortByHelpfulness();
+    }
+  }
+
   render() {
 
     // Conditional class names for sort by labels:
@@ -93,7 +102,7 @@ export default class App extends React.Component {
                 <div className={this.state.sortByDate ? 'reviews-sort-best' : 'reviews-sort-best-active'} onClick={this.changeToSortByHelpfulness}>Best</div>
               </div>
             </div>
-            <ReviewsList campReviews={reviewsList} />
+            <ReviewsList campReviews={reviewsList} getCampReviews={this.getCampReviews} />
             <div className="reviews-see-all-container" style={seeAllDisplay} onClick={this.loadAllReviews}>
               <span className="reviews-see-all">
                 See all {this.state.campReviews.length} reviews...
