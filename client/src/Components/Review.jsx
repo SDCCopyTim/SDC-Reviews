@@ -12,7 +12,7 @@ export default class Review extends React.Component {
 
   render() {
 
-    // Create array of paragraphs from the review bodyText:
+    // Create array of paragraphs from the review bodyText so I can map them to individual p tags:
     let bodyTextParagraphs = this.props.review.bodyText.split('\n');
 
     return (
