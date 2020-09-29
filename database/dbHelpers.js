@@ -26,6 +26,20 @@ module.exports = {
     });
   },
 
+  // Increment or decrement the helpful counter for a specific review
+  editReviewHelpful: (data, callback) => {
+    db.Review.update(
+      {_id: data.reviewId},
+      {$inc: { helpful: data.increment }}
+    ).exec((err, results) => {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null, results);
+      }
+    });
+  },
+
   // Post a review to the database by campId
   postReviewByCampId: (campId, review, callback) => {
     let reviewToSave = new db.Review ({

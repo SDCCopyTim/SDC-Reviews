@@ -38,6 +38,16 @@ app.get('/api/date/:campId', (req, res) => {
     }
   });
 });
+// Increment or decrement the helpful count of a review
+app.put('/api/helpful', (req, res) => {
+  dbHelpers.editReviewHelpful(req.body, (err, results) => {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(200).send('Helpfulness updated!');
+    }
+  });
+});
 // Post a review to the database for particular campground by campId.
 app.post('/api/:campId', (req, res) => {
   dbHelpers.postReviewByCampId(req.params.campId, req.body, (err, results) => {
