@@ -175,7 +175,8 @@ table {
 
 .reviews-date {
   font-size: 15px;
-  color: #757575;
+  font-weight: 300;
+  color: #7f7f7f;
 }
 
 .reviews-review-text {
@@ -220,8 +221,9 @@ table {
 }
 
 .reviews-report-btn {
-  color: #757575;
-  font-size: 12px;
+  color: #7f7f7f;
+  font-size: 10px;
+  font-weight: 400;
   text-align: center;
   height: 33px;
   padding: 5px 0 5px 10px;

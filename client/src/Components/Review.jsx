@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaThumbsUp, FaRegThumbsUp, FaRegFlag } from 'react-icons/fa';
+import Moment from 'react-moment';
 
 // Available props: review (review object)
 const Review = (props) => {
@@ -17,7 +18,7 @@ const Review = (props) => {
               </div>
               <div className="reviews-username"><a href="#">{props.review.username}</a> recommends this listing.</div>
             </div>
-            <div className="reviews-date">{props.review.date}</div>
+            <div className="reviews-date"><Moment format="MMMM Do, YYYY">{props.review.date}</Moment></div>
           </div>
           <div className="reviews-review-text"><p>{props.review.bodyText}</p></div>
           <div className="reviews-lower-btns">
