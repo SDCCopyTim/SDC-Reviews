@@ -4,6 +4,10 @@ import Moment from 'react-moment';
 
 // Available props: review (review object)
 const Review = (props) => {
+
+  // Create array of paragraphs from the review bodyText:
+  let bodyTextParagraphs = props.review.bodyText.split('\n');
+
   return (
     <div>
       <div className="reviews-review">
@@ -20,7 +24,9 @@ const Review = (props) => {
             </div>
             <div className="reviews-date"><Moment format="MMMM Do, YYYY">{props.review.date}</Moment></div>
           </div>
-          <div className="reviews-review-text"><p>{props.review.bodyText}</p></div>
+          <div className="reviews-review-text">
+            {bodyTextParagraphs.map((paragraph, i) => <p key={i}>{paragraph}</p>)}
+          </div>
           <div className="reviews-lower-btns">
             <div className="reviews-helpful-btn">
               <div className="reviews-helpful-inner-text">

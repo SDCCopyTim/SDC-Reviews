@@ -182,6 +182,7 @@ table {
 .reviews-review-text {
   font-size: 16.5px;
   line-height: 25px;
+  white-space: pre-wrap;
 }
 
 .reviews-review-text p {
