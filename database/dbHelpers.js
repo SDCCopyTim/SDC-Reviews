@@ -15,6 +15,17 @@ module.exports = {
     });
   },
 
+  // Get all reviews for particular campground by campId, but sort only by date
+  getCampgroundReviewsByDate: (campId, callback) => {
+    db.Review.find({campgroundId: campId}).sort({date: 'desc'}).exec((err, results) => {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null, results);
+      }
+    });
+  },
+
   // Post a review to the database by campId
   postReviewByCampId: (campId, review, callback) => {
     let reviewToSave = new db.Review ({

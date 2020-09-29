@@ -101,6 +101,25 @@ table {
   font-size: 16px;
 }
 
+.reviews-sort-recent, .reviews-sort-best {
+  color: #757575;
+  font-weight: 400;
+  border-bottom: 1px solid #dddddd;
+  cursor: pointer;
+}
+
+.reviews-sort-recent-active, .reviews-sort-best-active {
+  color: #333;
+  font-weight: 700;
+  border-bottom: 1px solid #dddddd;
+  cursor: pointer;
+}
+
+.reviews-sort-slash {
+  margin: 0 8px;
+  color: #757575;
+}
+
 .reviews-list {
   display: flex wrap;
   justify-content: flex-start;
