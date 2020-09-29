@@ -1,0 +1,250 @@
+/*
+  --------------- CSS Reset ---------------
+  http://meyerweb.com/eric/tools/css/reset/
+  v2.0 | 20110126
+  License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* --------------- My CSS --------------- */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.reviews-main-wrapper {
+  margin: auto;
+  width: 1080px;
+  display: flex;
+  justify-content: space-evenly;
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.reviews-main-column-2-3 {
+  width: 720px;
+  padding: 0 10px;
+  display: flex;
+}
+
+.reviews-right-column-1-3 {
+  width: 360px;
+}
+
+.reviews-container {
+  margin: 30px 0;
+  padding-top: 16px;
+  flex: 1 1;
+  display: flex wrap;
+}
+
+.reviews-count-sort {
+  flex: 1 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.reviews-count {
+  flex: 1;
+  font-size: 18px;
+}
+
+.reviews-sort {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 16px;
+}
+
+.reviews-list {
+  display: flex wrap;
+  justify-content: flex-start;
+  margin-top: 40px;
+}
+
+.reviews-review {
+  margin-bottom: 25px;
+  display: flex;
+}
+
+.reviews-avatar img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.reviews-review-body {
+  margin-left: 20px;
+  border-bottom: .65px solid #e7e7e7;
+}
+
+.reviews-header {
+  flex-grow: 1;
+  height: 25px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  display: flex;
+  align-content: center;
+}
+
+.reviews-thumb-username {
+  flex: 1;
+  display: flex;
+}
+
+.reviews-thumbs-up {
+  width: 25px;
+  height: 25px;
+  border-radius: 25px;
+  background-color: #40d9ac;
+  color: white;
+  font-size: 12px;
+}
+
+.reviews-thumbs-up-icon {
+  position: relative;
+  left: 6px;
+  top: 5px
+
+}
+
+.reviews-username, .reviews-date {
+  height: 25px;
+  line-height: 25px;
+}
+
+.reviews-username {
+  margin-left: 10px;
+  font-size: 15px;
+}
+
+.reviews-username a {
+  color: #333;
+  text-decoration: none;
+  font-size: 16.5px;
+  font-weight: 500;
+}
+
+.reviews-username a:hover {
+  text-decoration: underline;
+}
+
+.reviews-date {
+  font-size: 14px;
+  font-weight: 400;
+  color: #7f7f7f;
+}
+
+.reviews-review-text {
+  font-size: 15.5px;
+  line-height: 25px;
+  white-space: pre-wrap;
+}
+
+.reviews-review-text p {
+  margin-bottom: 11px;
+}
+
+.reviews-lower-btns {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.reviews-helpful-btn {
+  background-color: #40d9ac;
+  font-weight: 500;
+  height: 45px;
+  width: 105px;
+  padding: 12px 2px;
+  font-size: 12px;
+  line-height: 19.88px;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  cursor: pointer;
+}
+
+.reviews-helpful-btn:hover {
+  background-color: #3cc69e;
+}
+
+.reviews-helpful-inner-text {
+  display: flex;
+  align-items: center;
+}
+
+.reviews-helpful-thumb-icon {
+  font-size: 17px;
+  margin-right: 6px;
+}
+
+.reviews-report-btn {
+  color: #808080;
+  font-size: 11px;
+  font-weight: 400;
+  text-align: center;
+  height: 33px;
+  padding: 5px 0 5px 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.reviews-report-btn:hover {
+  color: #40d9ac;
+}
+
+.reviews-report-btn-text {
+  margin-left: 5px;
+}
