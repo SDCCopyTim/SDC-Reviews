@@ -1,13 +1,31 @@
 import React from 'react';
 import { FaThumbsUp, FaRegThumbsUp, FaRegFlag } from 'react-icons/fa';
 import Moment from 'react-moment';
+import axios from 'axios';
 
 // Available props: review (review object)
 export default class Review extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      helpful: this.props.review.helpful,
+      increment: 1
     };
+    this.updateHelpfulCount = this.updateHelpfulCount.bind(this);
+  }
+
+  updateHelpfulCount() {
+    axios.put('/api/helpful', {
+      reviewId: this.props.review._id,
+      increment: this.state.increment
+    })
+      .then((response) => {
+        this.setState({
+          helpful: this.state.helpful + this.state.increment,
+          increment: this.state.increment * -1
+        });
+      })
+      .catch((err) => console.error(err));
   }
 
   render() {
@@ -35,12 +53,12 @@ export default class Review extends React.Component {
               {bodyTextParagraphs.map((paragraph, i) => <p key={i}>{paragraph}</p>)}
             </div>
             <div className="reviews-lower-btns">
-              <div className="reviews-helpful-btn">
+              <div className="reviews-helpful-btn" onClick={this.updateHelpfulCount}>
                 <div className="reviews-helpful-inner-text">
                   <div className="reviews-helpful-thumb-icon"><FaRegThumbsUp /></div>
                   <div>Helpful</div>
                 </div>
-                <div>{this.props.review.helpful}</div>
+                <div>{this.state.helpful}</div>
               </div>
               <div className="reviews-report-btn">
                 <FaRegFlag />
