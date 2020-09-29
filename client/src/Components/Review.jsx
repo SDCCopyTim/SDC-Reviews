@@ -6,10 +6,17 @@ import Moment from 'react-moment';
 export default class Review extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      rollover: false
+    };
+    this.handleButtonRollover = this.handleButtonRollover.bind(this);
   }
 
-
+  handleButtonRollover() {
+    this.setState({
+      rollover: true
+    });
+  }
 
   render() {
 

@@ -116,6 +116,7 @@ table {
   width: 75px;
   height: 75px;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .reviews-review-body {
@@ -210,6 +211,11 @@ table {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  cursor: pointer;
+}
+
+.reviews-helpful-btn:hover {
+  background-color: #3cc69e;
 }
 
 .reviews-helpful-inner-text {
@@ -231,6 +237,11 @@ table {
   padding: 5px 0 5px 10px;
   display: flex;
   align-items: center;
+  cursor: pointer;
+}
+
+.reviews-report-btn:hover {
+  color: #40d9ac;
 }
 
 .reviews-report-btn-text {
