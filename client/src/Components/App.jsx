@@ -27,7 +27,7 @@ export default class App extends React.Component {
       .then((reviews) => {
         this.setState({
           campReviews: reviews.data
-        }, () => console.log(this.state));
+        });
       })
       .catch((err) => console.error(err));
   }
