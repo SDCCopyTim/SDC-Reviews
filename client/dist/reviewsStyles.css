@@ -91,14 +91,15 @@ table {
 
 .reviews-count {
   flex: 1;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .reviews-sort {
   flex: 1;
   display: flex;
   justify-content: flex-end;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .reviews-sort-recent, .reviews-sort-best {
@@ -108,16 +109,37 @@ table {
   cursor: pointer;
 }
 
+.reviews-sort-recent:hover, .reviews-sort-best:hover {
+  border-bottom: 1px solid #333;
+
+}
+
 .reviews-sort-recent-active, .reviews-sort-best-active {
   color: #333;
   font-weight: 700;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #333;
   cursor: pointer;
 }
 
 .reviews-sort-slash {
   margin: 0 8px;
   color: #757575;
+}
+
+.reviews-see-all-container {
+  margin: auto;
+  justify-content: center;
+}
+
+.reviews-see-all {
+  border-bottom: 1px solid #dddddd;
+  margin: 20px 0 20px 60px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.reviews-see-all:hover {
+  border-bottom: 1px solid #757575;
 }
 
 .reviews-list {
