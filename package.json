@@ -9,7 +9,8 @@
   "scripts": {
     "start": "node server/index.js",
     "seed": "node database/seedReviews.js",
-    "build": "webpack"
+    "build": "webpack",
+    "test": "jest"
   },
   "dependencies": {
     "axios": "^0.20.0",
@@ -26,7 +27,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.11.0",
-    "react-moment": "^1.0.0"
+    "react-moment": "^1.0.0",
+    "react-test-renderer": "^16.13.1"
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
@@ -34,6 +36,8 @@
     "@babel/preset-react": "^7.10.4",
     "babel": "^6.23.0",
     "babel-loader": "^8.1.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
     "eslint": "^7.9.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor.git",
@@ -41,6 +45,7 @@
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.21.1",
     "eslint-plugin-react-hooks": "^4.1.2",
+    "jest": "^26.5.0",
     "nodemon": "^2.0.4",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
