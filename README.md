@@ -4,20 +4,23 @@
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/Go-Tim/nick-nav
+  - https://github.com/Go-Tim/tracy-detail-desc-calendarsticky
   - https://github.com/Go-Tim/overview-2
   - https://github.com/Go-Tim/tim-suggestions
 
 ## Table of Contents
 
-1. [Usage](#Usage)
+1. [Usage](#usage)
 2. [Requirements](#requirements)
 3. [Development](#development)
 
 ## Usage
 
-> Some usage instructions
+1. [Install Dependencies](#installing-dependencies)
+2. [Setup the database and add mock data](#database)
+3. Run webpack with ```npm run build``` from the root directory
+4. Start up the server with ```npm run start```
 
 ## Requirements
 
@@ -38,5 +41,4 @@ npm install
 ```
 
 ### Database
-1. Set up a mongodb database called 'timcamp'
-2. Run the seed file from the command line while in the root directory, run $ ```node database/seedReviews.js```
+- Run the seed file from the command line while in the root directory, run $ ```node database/seedReviews.js```
