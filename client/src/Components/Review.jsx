@@ -44,7 +44,7 @@ export default class Review extends React.Component {
   }
 
   reportBtnClick() {
-    window.alert('Good lookin out! We\'ll check into this review.');
+    window.alert('Good lookin out! Tim will check into this review.');
   }
 
   render() {
