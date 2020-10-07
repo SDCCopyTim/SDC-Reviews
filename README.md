@@ -19,8 +19,7 @@
 
 1. [Install Dependencies](#installing-dependencies)
 2. [Setup the database and add mock data](#database)
-3. Run webpack with ```npm run build``` from the root directory
-4. Start up the server with ```npm run start```
+3. [Run the app](#running-the-app)
 
 ## Requirements
 
@@ -42,3 +41,11 @@ npm install
 
 ### Database
 - Run the seed file from the command line—while in the root directory, run $ ```node database/seedReviews.js```
+
+### Running the app
+1. In a terminal, from the root directory:
+```sh
+npm run build
+npm run start
+```
+2. Open a browser and navigate to http://localhost:3004
