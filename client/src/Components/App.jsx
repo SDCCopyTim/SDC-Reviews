@@ -7,7 +7,7 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       campReviews: [],
-      campId: 53,
+      campId: (Math.floor(Math.random() * (101 - 1) + 1)), // random int between 1–100
       sortByDate: false,
       top5: true
     };
