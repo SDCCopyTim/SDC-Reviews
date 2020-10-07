@@ -1,4 +1,4 @@
-# Reviews Module
+# TimCamp Reviews Module
 
 > Reviews module for a product page on a camp spot rental website. Created as part of our Front-End Capstone project at Hack Reactor.
 
@@ -41,4 +41,4 @@ npm install
 ```
 
 ### Database
-- Run the seed file from the command line while in the root directory, run $ ```node database/seedReviews.js```
+- Run the seed file from the command line—while in the root directory, run $ ```node database/seedReviews.js```
