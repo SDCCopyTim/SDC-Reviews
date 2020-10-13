@@ -56,6 +56,17 @@ module.exports = {
         callback(null, result);
       }
     });
+  },
+
+  // Delete a review to the database by reviewId
+  deleteReviewByReviewId: (reviewId, callback) => {
+    db.Review.deleteOne({_id: reviewId}, function(err, result){
+      if (err) {
+        callback(err)
+      } else {
+        callback(null, result);
+      }
+    })
   }
 
 };

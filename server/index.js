@@ -59,6 +59,17 @@ app.post('/api/:campId', (req, res) => {
   });
 });
 
+// Delete a review in the database for a particular campground by reviewId.
+app.delete('/api/delete/:reviewId', (req, res) => {
+  dbHelpers.deleteReviewByReviewId(req.params.reviewId, (err, results) => {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(200).send('Review deleted!')
+    }
+  })
+})
+
 // Set port and get confirmation
 let port = 3004;
 app.listen(port, () => console.log(`Reviews server listening at port ${port}`));
