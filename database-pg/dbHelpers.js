@@ -1,9 +1,9 @@
-const { Pool } = require('pg');
-const connection = require('./index.js');
+const { Pool, Client } = require('pg');
+const pool = require('./index.js');
 
 module.exports = {
   getCampgroundReviews: (campId, callback) => {
-    connection.query(`SELECT * FROM reviews WHERE campgroundid = ${campId}`, (err, res) => {
+    pool.query(`SELECT * FROM reviews WHERE campgroundid = ${campId}`, (err, res) => {
       if (err) {
         callback(err)
       } else {
