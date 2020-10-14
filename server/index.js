@@ -7,7 +7,7 @@ const path = require('path');
 
 const dbHelpers = require('../database/dbHelpers.js');
 
-// Static files
+// Serve Static files
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // Middleware
