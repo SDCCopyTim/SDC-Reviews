@@ -41,12 +41,14 @@ npm install
 
 ### Database
 - For the mongo database, run the seed file from the command line—while in the root directory, run $ `node database-mg/seedReviews.js`
-- For the postgresql database, from the root directory, run $ `psql -d -U [your username] postgres <./database/schema.sql`
+- For the postgresql database, from the root directory, run $ `psql -d -U [your username] postgres <./database-pg/schema.sql`, then run `node database-pg/seedReviews.js` to seed the database with initial records
 
 ### Running the app
 1. In a terminal, from the root directory:
-```sh
-npm run build
-npm run start
-```
-2. Open a browser and navigate to http://localhost:3004
+
+- run $ `npm run build`
+- run $ `npm run startmg` to start the server connecting to mongo db
+- run $ `npm run startpg` to start the server connecting to postgreSQL db
+
+2. Open a browser and navigate to http://localhost:3004; version of the app using the mongo db
+3. Open a browser and navigate to http://localhost:8004; version of the app using the postgreSQL db
