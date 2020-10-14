@@ -60,7 +60,7 @@ module.exports = {
 
   // Delete a review to the database by reviewId
   deleteReviewByReviewId: (reviewId, callback) => {
-    db.Review.deleteOne({_id: reviewId}, function(err, result){
+    db.Review.deleteOne({_id: reviewId}, (err, result) => {
       if (err) {
         callback(err)
       } else {
