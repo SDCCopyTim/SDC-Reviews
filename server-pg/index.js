@@ -40,6 +40,7 @@ app.get('/api/date/:campId', (req, res) => {
 });
 // Increment or decrement the helpful count of a review
 app.put('/api/helpful', (req, res) => {
+  console.log(req.params);
   dbHelpers.editReviewHelpful(req.body, (err, results) => {
     if (err) {
       res.status(400).send(err);

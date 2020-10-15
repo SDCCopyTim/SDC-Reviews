@@ -28,8 +28,9 @@ module.exports = {
 
   // Increment or decrement the helpful counter for a specific review
   editReviewHelpful: (data, callback) => {
+    console.log(data);
     db.Review.updateOne(
-      {_id: data.reviewid},
+      {_id: data.reviewId},
       {$inc: { helpful: data.increment }}
     ).exec((err, results) => {
       if (err) {

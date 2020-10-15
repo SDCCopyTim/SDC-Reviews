@@ -4,7 +4,7 @@ const pool = require('./index.js');
 module.exports = {
   //Get all reviews for particular campground by campId, sorted by helpfulness and then date
   getCampgroundReviews: (campId, callback) => {
-    pool.query(`SELECT * FROM reviews WHERE campgroundId = ${campId}`, (err, res) => {
+    pool.query(`SELECT * FROM reviews WHERE campgroundId = ${campId} ORDER BY helpful desc, reviewDate desc;`, (err, res) => {
       if (err) {
         callback(err)
       } else {
@@ -24,7 +24,8 @@ module.exports = {
   },
   // Increment or decrement the helpful counter for a specific review
   editReviewHelpful: (data, callback) => {
-    pool.query(`UPDATE reviews set helpful = helpful + 1 WHERE id = ${data.reviewId};`, (err, results) => {
+    console.log(data);
+    pool.query(`UPDATE reviews set helpful = helpful + ${data.increment} WHERE id = ${data.reviewId};`, (err, results) => {
       if (err) {
         callback(err);
       } else {

@@ -19,7 +19,7 @@ export default class Review extends React.Component {
 
   updateHelpfulCount() {
     axios.put('/api/helpful', {
-      reviewId: this.props.review._id,
+      reviewId: this.props.review.id || this.props.review._id,
       increment: this.state.increment
     })
       .then((response) => {
