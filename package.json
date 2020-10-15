@@ -17,9 +17,10 @@
   },
   "scripts": {
     "startmg": "nodemon server-mg/index.js",
+    "startpg": "nodemon server-pg/index.js",
     "seedmg": "node database-mg/seedReviews.js",
     "seedpg": "node database-pg/seedReviews.js",
-    "dev": "webpack --mode development",
+    "dev": "webpack --mode development --w",
     "build": "webpack --mode production",
     "test": "jest"
   },

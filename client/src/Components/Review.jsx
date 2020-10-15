@@ -18,7 +18,7 @@ export default class Review extends React.Component {
   }
 
   updateHelpfulCount() {
-    axios.put('http://localhost:3004/api/helpful', {
+    axios.put('/api/helpful', {
       reviewId: this.props.review._id,
       increment: this.state.increment
     })
@@ -50,7 +50,7 @@ export default class Review extends React.Component {
   render() {
 
     // Create array of paragraphs from the review bodyText so I can map them to individual p tags:
-    let bodyTextParagraphs = this.props.review.bodyText.split('\n');
+    let bodyTextParagraphs = this.props.review.bodytext.split('\n');
 
     // Report button opacity conditional:
     const reportBtnStyle = {
@@ -61,7 +61,7 @@ export default class Review extends React.Component {
       <div>
         <div className="reviews-review" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
           <div className="reviews-avatar">
-            <img src={this.props.review.profilePhoto} alt="User photo" />
+            <img src={this.props.review.profilephoto} alt="User photo" />
           </div>
           <div className="reviews-review-body">
             <div className="reviews-header">
