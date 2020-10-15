@@ -6,7 +6,7 @@ module.exports = {
 
   // Get all reviews for particular campground by campId, sorted by helpfulness and then date
   getCampgroundReviews: (campId, callback) => {
-    db.Review.find({campgroundId: campId}).sort({helpful: 'desc', date: 'desc'}).exec((err, results) => {
+    db.Review.find({campgroundid: campId}).sort({helpful: 'desc', reviewdate: 'desc'}).exec((err, results) => {
       if (err) {
         callback(err);
       } else {
@@ -17,7 +17,7 @@ module.exports = {
 
   // Get all reviews for particular campground by campId, but sort only by date
   getCampgroundReviewsByDate: (campId, callback) => {
-    db.Review.find({campgroundId: campId}).sort({date: 'desc'}).exec((err, results) => {
+    db.Review.find({campgroundid: campId}).sort({reviewdate: 'desc'}).exec((err, results) => {
       if (err) {
         callback(err);
       } else {
@@ -29,7 +29,7 @@ module.exports = {
   // Increment or decrement the helpful counter for a specific review
   editReviewHelpful: (data, callback) => {
     db.Review.updateOne(
-      {_id: data.reviewId},
+      {_id: data.reviewid},
       {$inc: { helpful: data.increment }}
     ).exec((err, results) => {
       if (err) {
@@ -43,10 +43,10 @@ module.exports = {
   // Post a review to the database by campId
   postReviewByCampId: (campId, review, callback) => {
     let reviewToSave = new db.Review ({
-      campgroundId: campId,
+      campgroundid: campId,
       username: review.username,
-      bodyText: review.bodyText,
-      profilePhoto: faker.image.avatar(),
+      bodytext: review.bodyText,
+      profilephoto: faker.image.avatar(),
       helpful: 0
     });
     reviewToSave.save(function (err, result) {

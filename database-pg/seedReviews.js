@@ -17,12 +17,12 @@ const reviewsGenerator = function() {
       let date = faker.date.between('2017-01-01', '2020-09-25')
       let reviewDate = moment(date).format();
       let review = {
-        campgroundId: i,
+        campgroundid: i,
         username: reviewerName,
-        bodyText: reviewText,
-        profilePhoto: reviewerAvatar,
+        bodytext: reviewText,
+        profilephoto: reviewerAvatar,
         helpful: helpfulReview,
-        reviewDate: reviewDate
+        reviewdate: reviewDate
       };
       reviewsArr.push(review);
     }

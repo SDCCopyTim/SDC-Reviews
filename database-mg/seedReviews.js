@@ -17,12 +17,12 @@ let reviewsGenerator = function() {
       let helpfulReview = faker.random.number({min: 0, max: 14});
       let reviewDate = faker.date.between('2017-01-01', '2020-09-25');
       let review = {
-        campgroundId: i,
+        campgroundid: i,
         username: reviewerName,
-        bodyText: reviewText,
-        profilePhoto: reviewerAvatar,
+        bodytext: reviewText,
+        profilephoto: reviewerAvatar,
         helpful: helpfulReview,
-        date: reviewDate
+        reviewdate: reviewDate
       };
       reviewsArr.push(review);
     }

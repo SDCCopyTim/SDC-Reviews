@@ -10,11 +10,11 @@ DROP TABLE if exists reviews;
 CREATE TABLE reviews
 (
   id SERIAL, -- The primary key
-  campgroundId integer NOT NULL, -- The foreign key
+  campgroundid integer NOT NULL, -- The foreign key
   username varchar NOT NULL,
-  bodyText varchar NOT NULL,
-  profilePhoto varchar NOT NULL,
+  bodytext varchar NOT NULL,
+  profilephoto varchar NOT NULL,
   helpful integer NOT NULL,
-  reviewDate date NOT NULL,
+  reviewdate date NOT NULL,
   PRIMARY KEY (id)
 )

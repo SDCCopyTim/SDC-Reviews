@@ -71,7 +71,7 @@ export default class Review extends React.Component {
                 </div>
                 <div className="reviews-username"><a href="#">{this.props.review.username}</a> recommends this listing.</div>
               </div>
-              <div className="reviews-date"><Moment format="MMMM Do, YYYY">{this.props.review.date}</Moment></div>
+              <div className="reviews-date"><Moment format="MMMM Do, YYYY">{this.props.review.reviewdate}</Moment></div>
             </div>
             <div className="reviews-review-text">
               {bodyTextParagraphs.map((paragraph, i) => <p key={i}>{paragraph}</p>)}
