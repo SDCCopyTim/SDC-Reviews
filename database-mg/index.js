@@ -8,6 +8,7 @@ connection.once('open', function() {
 });
 
 const reviewsSchema = new mongoose.Schema({
+  id: Number,
   campgroundid: Number,
   username: String,
   bodytext: String,
