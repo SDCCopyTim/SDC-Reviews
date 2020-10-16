@@ -6,8 +6,8 @@ describe('Review', () => {
 
   let sampleReview = {
     username: 'Nick R.',
-    bodyText: 'Hello, this is a review',
-    profilePhoto: 'https://s3.amazonaws.com/uifaces/faces/twitter/gcmorley/128.jpg',
+    bodytext: 'Hello, this is a review',
+    profilephoto: 'https://s3.amazonaws.com/uifaces/faces/twitter/gcmorley/128.jpg',
     helpful: 19,
     date: 'March 7th, 2017'
   };

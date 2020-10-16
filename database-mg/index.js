@@ -8,13 +8,12 @@ connection.once('open', function() {
 });
 
 const reviewsSchema = new mongoose.Schema({
-  campgroundId: Number,
+  campgroundid: Number,
   username: String,
-  bodyText: String,
-  profilePhoto: String,
+  bodytext: String,
+  profilephoto: String,
   helpful: Number,
-  date: { type: Date, default: Date.now },
-  userPhotos: String
+  reviewdate: { type: Date, default: Date.now }
 });
 
 const Review = mongoose.model('Review', reviewsSchema);

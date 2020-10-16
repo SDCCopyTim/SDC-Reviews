@@ -18,8 +18,8 @@ export default class Review extends React.Component {
   }
 
   updateHelpfulCount() {
-    axios.put('http://localhost:3004/api/helpful', {
-      reviewId: this.props.review._id,
+    axios.put('/api/helpful', {
+      reviewId: this.props.review.id || this.props.review._id,
       increment: this.state.increment
     })
       .then((response) => {
@@ -50,7 +50,7 @@ export default class Review extends React.Component {
   render() {
 
     // Create array of paragraphs from the review bodyText so I can map them to individual p tags:
-    let bodyTextParagraphs = this.props.review.bodyText.split('\n');
+    let bodyTextParagraphs = this.props.review.bodytext.split('\n');
 
     // Report button opacity conditional:
     const reportBtnStyle = {
@@ -61,7 +61,7 @@ export default class Review extends React.Component {
       <div>
         <div className="reviews-review" onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>
           <div className="reviews-avatar">
-            <img src={this.props.review.profilePhoto} alt="User photo" />
+            <img src={this.props.review.profilephoto} alt="User photo" />
           </div>
           <div className="reviews-review-body">
             <div className="reviews-header">
@@ -71,7 +71,7 @@ export default class Review extends React.Component {
                 </div>
                 <div className="reviews-username"><a href="#">{this.props.review.username}</a> recommends this listing.</div>
               </div>
-              <div className="reviews-date"><Moment format="MMMM Do, YYYY">{this.props.review.date}</Moment></div>
+              <div className="reviews-date"><Moment format="MMMM Do, YYYY">{this.props.review.reviewdate}</Moment></div>
             </div>
             <div className="reviews-review-text">
               {bodyTextParagraphs.map((paragraph, i) => <p key={i}>{paragraph}</p>)}
