@@ -24,3 +24,5 @@ coverage
 build/
 bundle.js
 
+# Giant Data Files
+dataFiles

@@ -30,7 +30,7 @@ module.exports = {
   editReviewHelpful: (data, callback) => {
     console.log(data);
     db.Review.updateOne(
-      {_id: data.reviewId},
+      {id: data.reviewId},
       {$inc: { helpful: data.increment }}
     ).exec((err, results) => {
       if (err) {
