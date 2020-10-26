@@ -1,0 +1,11 @@
+config:
+  target: 'http://localhost:8004'
+  http:
+    pool: 20
+  phases:
+    - duration: 60
+      arrivalRate: 650
+scenarios:
+  - flow:
+    - get:
+        url: "/api/date/{{$randomNumber(9000000,10000000)}}"

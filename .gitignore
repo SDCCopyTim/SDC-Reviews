@@ -26,3 +26,6 @@ bundle.js
 
 # Giant Data Files
 dataFiles
+
+# New Relic Configuration File
+newrelic.js

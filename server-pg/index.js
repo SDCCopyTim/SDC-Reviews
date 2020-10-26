@@ -1,20 +1,17 @@
+const newrelic = require('newrelic');
 const express = require('express');
 const bodyparser = require('body-parser');
-const morgan = require('morgan');
-const cors = require('cors');
+//const cors = require('cors');
 const app = express();
 const path = require('path');
 
-const dbHelpers = require('../database-pg/dbHelpers.js');
 
-// Serve Static files
-app.use(express.static(path.join(__dirname, '../client/dist')));
+const dbHelpers = require('../database-pg/dbHelpers.js');
 
 // Middleware
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
-app.use(morgan('dev'));
-app.use(cors());
+//app.use(cors());
 
 // Get all reviews for particular campground by campId sorted by helpfulness and then date.
 // Returns an array of reviews
@@ -23,7 +20,7 @@ app.get('/api/helpful/:campId', (req, res) => {
     if (err) {
       res.status(400).send(err);
     } else {
-      res.status(200).json(reviews);
+      res.status(200).send(reviews);
     }
   });
 });
@@ -34,7 +31,7 @@ app.get('/api/date/:campId', (req, res) => {
     if (err) {
       res.status(400).send(err);
     } else {
-      res.status(200).json(reviews);
+      res.status(200).send(reviews);
     }
   });
 });
@@ -70,6 +67,10 @@ app.put('/api/helpful', (req, res) => {
 //     }
 //   })
 // })
+
+
+// Serve Static files
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // Set port and get confirmation
 let port = 8004;
