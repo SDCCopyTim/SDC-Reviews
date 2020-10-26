@@ -1,17 +1,22 @@
 const newrelic = require('newrelic');
+const compression = require('compression')
 const express = require('express');
 const bodyparser = require('body-parser');
-//const cors = require('cors');
+const cors = require('cors');
 const app = express();
 const path = require('path');
 
 
-const dbHelpers = require('../database-pg/dbHelpers.js');
+const dbHelpers = require('../database-pg/testdbHelpers.js');
+
+// Serve Static files
+app.use(express.static(path.join(__dirname, '../client/dist')));
 
 // Middleware
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
-//app.use(cors());
+app.use(cors());
+app.use(compression());
 
 // Get all reviews for particular campground by campId sorted by helpfulness and then date.
 // Returns an array of reviews
@@ -20,29 +25,7 @@ app.get('/api/helpful/:campId', (req, res) => {
     if (err) {
       res.status(400).send(err);
     } else {
-      res.status(200).send(reviews);
-    }
-  });
-});
-// Get all reviews for particular campground by campId sorted by date only.
-// Returns an array of reviews
-app.get('/api/date/:campId', (req, res) => {
-  dbHelpers.getCampgroundReviewsByDate(req.params.campId, (err, reviews) => {
-    if (err) {
-      res.status(400).send(err);
-    } else {
-      res.status(200).send(reviews);
-    }
-  });
-});
-// Increment or decrement the helpful count of a review
-app.put('/api/helpful', (req, res) => {
-  console.log(req.params);
-  dbHelpers.editReviewHelpful(req.body, (err, results) => {
-    if (err) {
-      res.status(400).send(err);
-    } else {
-      res.status(200).send('Helpfulness updated!');
+      res.status(200).json(reviews);
     }
   });
 });
@@ -68,10 +51,6 @@ app.put('/api/helpful', (req, res) => {
 //   })
 // })
 
-
-// Serve Static files
-app.use(express.static(path.join(__dirname, '../client/dist')));
-
 // Set port and get confirmation
-let port = 8004;
+let port = 8000;
 app.listen(port, () => console.log(`Reviews server listening at port ${port}`));

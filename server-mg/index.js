@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyparser = require('body-parser');
-const morgan = require('morgan');
 const cors = require('cors');
 const app = express();
 const path = require('path');
@@ -13,7 +12,6 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 // Middleware
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
-app.use(morgan('dev'));
 app.use(cors());
 
 // Get all reviews for particular campground by campId sorted by helpfulness and then date.
